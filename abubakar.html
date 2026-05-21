@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brew & Co.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter', sans-serif;
+      background:#f3f0eb;
+      color:#3d2b22;
+    }
+
+    .container{
+      width:80%;
+      max-width:850px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    header{
+      background:white;
+      padding:15px 0;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-family:'Playfair Display', serif;
+      font-size:20px;
+      font-weight:700;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#3d2b22;
+      font-size:14px;
+    }
+
+    .order-btn{
+      background:#c96d34;
+      color:white;
+      padding:10px 18px;
+      border-radius:6px;
+      text-decoration:none;
+      font-size:10px;
+      font-weight:400;
+    }
+
+    /* HERO */
+
+    .hero{
+      background:#ebe6df;
+      padding:80px 0;
+    }
+
+    .hero-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:60px;
+    }
+
+    .hero-text{
+      max-width:400px;
+    }
+
+    .hero-text h1{
+      font-family:'Playfair Display', serif;
+      font-size:25px;
+      line-height:1.1;
+      margin-bottom:18px;
+    }
+
+    .hero-text p{
+      color:#6d625d;
+      line-height:1.8;
+      margin-bottom:10px;
+      font: size 12px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:12px;
+    }
+
+    .btn{
+      padding:10px 20px;
+      border-radius:6px;
+      border:none;
+      cursor:pointer;
+      font-size:10px;
+      font-weight:400;
+    }
+
+    .primary-btn{
+      background:#c96d34;
+      color:white;
+    }
+
+    .secondary-btn{
+      background:transparent;
+      border:1px solid #3d2b22;
+      color:#3d2b22;
+    }
+
+    .hero-image img{
+      width:320px;
+      border-radius:8px;
+      display:block;
+    }
+
+    /* FEATURES */
+
+    .features{
+      background:#f8f6f3;
+      padding:100px 0;
+      text-align:center;
+    }
+
+    .section-title{
+      font-family:'Playfair Display', serif;
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    .section-subtitle{
+      color:#7a716c;
+      margin-bottom:30px;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .feature-card{
+      background:#efe8df;
+      padding:35px;
+      border-radius:10px;
+      text-align:left;
+    }
+
+    .feature-number{
+      width:36px;
+      height:36px;
+      background:#c96d34;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-weight:400;
+      margin-bottom:15px;
+    }
+
+    .feature-card h3{
+      margin-bottom:15px;
+      font-size:20px;
+      font-family:'Playfair Display', serif;
+    }
+
+    .feature-card p{
+      color:#6d625d;
+      line-height:1.7;
+      font-size:12px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      background:#ebe6df;
+      padding:100px 0;
+    }
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+    }
+
+    .contact-info h2{
+      font-family:'Playfair Display', serif;
+      font-size:42px;
+      margin-bottom:20px;
+    }
+
+    .contact-info p{
+      color:#6d625d;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    .contact-details{
+      margin-top:30px;
+    }
+
+    .contact-details p{
+      margin-bottom:12px;
+    }
+
+    form{
+      background:#f8f6f3;
+      padding:35px;
+      border-radius:10px;
+    }
+
+    .form-group{
+      margin-bottom:20px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:8px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      padding:14px;
+      border:1px solid #d4ccc4;
+      border-radius:6px;
+      font-family:inherit;
+      background:white;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .submit-btn{
+      background:#c96d34;
+      color:white;
+      border:none;
+      padding:14px 24px;
+      border-radius:6px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#2c160d;
+      color:#f2e9e2;
+      padding:70px 0 30px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:40px;
+      margin-bottom:50px;
+    }
+
+    .footer-logo{
+      font-family:'Playfair Display', serif;
+      font-size:24px;
+      margin-bottom:15px;
+    }
+
+    .footer-text{
+      color:#c8b8ae;
+      line-height:1.8;
+      max-width:300px;
+    }
+
+    .footer-column h4{
+      margin-bottom:18px;
+      color:white;
+    }
+
+    .footer-column ul{
+      list-style:none;
+    }
+
+    .footer-column li{
+      margin-bottom:12px;
+    }
+
+    .footer-column a{
+      text-decoration:none;
+      color:#c8b8ae;
+      font-size:14px;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:25px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .socials{
+      display:flex;
+      gap:12px;
+    }
+
+    .socials div{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.1);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:13px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .hero-content,
+      .contact-wrapper{
+        grid-template-columns:1fr;
+        display:grid;
+      }
+
+      .hero{
+        text-align:center;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-image img{
+        width:100%;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .hero-text h1{
+        font-size:48px;
+      }
+    }
+
+    @media(max-width:600px){
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-text h1{
+        font-size:40px;
+      }
+
+      .section-title,
+      .contact-info h2{
+        font-size:34px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container">
+      <nav>
+
+        <div class="logo">Brew & Co.</div>
+
+        <ul class="nav-links">
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Locations</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <a href="#" class="order-btn">Order Online</a>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-content">
+
+      <div class="hero-text">
+
+        <h1 style="text-align: center;">Slow mornings,</h1><h1 style="text-align: center;">good coffee.</h1>
+
+        <p style="text-align: center;">
+          Single-origin beans roasted in small batches every Tuesday.
+          Sip it in our café, or have it shipped to your door.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="btn primary-btn">Shop Beans</button>
+          <button class="btn secondary-btn">Our Story</button>
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTExMVFRUVFxUWFRUWFxUWFRUVFRUWFhUWFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLi0BCgoKDg0OGBAQGislHyUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS8tLS0tLS0tLS0tLS0tLS0tLS0rLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAIDBQYBBwj/xAA+EAABAwIEBAQDBgQFBAMAAAABAAIDBBEFEiExBkFRYRMicYEykaEUQlKx0fAjcsHhBxUzYoIWorLxJENj/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDBAAF/8QAKhEAAgICAgEDAwMFAAAAAAAAAAECEQMhEjETBCJBMlFhFHGRI4GhwdH/2gAMAwEAAhEDEQA/AIaXDY2DytCnMaLYARcLjmpAAL2pjWoyRqHKBw8Jrimly61qJxi+LKHmsdlXquOUmZhWIp8O85uEbpHRVuih8M9FzIei2H+Wt6Jn+Vt6JPKiviZmaJpzbLWRMuxKLC2jkjBT6WSyyoKwyKrCqXPVQt6yNJ9GnMfoCvbMNh8o9AvP+EcLDp8/4RYer/L+WZel04shF3sMlWhSQAquqWZSrCpmyhVskucJpNCRTJYZ7heSf4lcL/Z5PtEQ/hSO84G0ch59mu+h9QvRjXtabXsnzeHUMdHIA5jxlcORBSqdDuFnz8uFavHeFHU0hY7VpuWP5Ob+vUf2VS/DFXmifBlSnteipKSyHcxFOxaaHtlXSbqKyljcEaOs7GxGRQXSp4gVZU9MQg5JHcWztFR67LRUjLBB0rbKyjS8kznFrsiB1VpS7KqLfMrOl2RATPCTAkSnsQOOSxBwsVg+JsELCXNC9AUNXAHtIK5aCePFJa2q4cOc2HNcTWA0fDGNh7Q1x1WjK8ropSwhwW7wTFQ9oB3SJjuJbuCGkaikzIiKQxxqYNXbJFEALXtuwrMMhs661NQLghU00OqnkeimJe4jbGneGApY22TZXrNZsojuFx7k3NdPjjzEN6kD5myDCjXcOU/hxNP3nec++jfpb5laITCyraODM49G2A/fyXMZrREz97qyfFWQa5OiWtxRjBdxDW/icQAPmqWu4vpm6DPJ/KAB83WWSrhLWSCNuoacz3HSNg5Zj89NyiBFSxmwa6pf1JLIge1iCfc+yDm6tjKCukdrcdheb5JR7sKsMGxyI+UO16O0KCZWu+7DTMHTwmu+pFyn52v/ANSCmeOzPCcL9Hx2I+aTnEfhL7GqqGRVURjeNOvNp5Fp6ry/iShdSvLHa82u5Ob1HT0W6o2RGwY98J/DIczD2bKNR/yugOPsGfNT3Yw+LD5raXcx3xBv4tgdOndUg7ZOSpaPKppiSowFxoT1qoyWd8JNMZCcxysqN7HaHRcBsr4Zi0rSYPXNdoVXYlhhYMw2VXDMWOuEsopjxnW0ejRQKaJiD4crxIy3NWrhqs0U1OjRNpwsGezVH0zdEFUOsUTRy6LQZSV7U5i6TdIInHC5K6YSukoHHdF1RZklxx5/GLIiGu8I3BQlTOAq58hKRKy7dHqGB4s2Vo1Vs4rynB8QMThrovRcNrhI0apibRYApFNC64oijCVXygZkZK7RV7rkqWbotgXuHNCZNEF1oSlKymwG8JWGB0uedg5A5j6N1/OyrXSK+wKUQwSTHm4MB6C4v8ybJorYsutGpikDWmyx3Esr53eFEfM4gAnUNA1e89gAfew5q2qq8lnk3I0voqHCnudDNMRZznmFt9/KbSf9wI/4BNKV/wBhYwr92Qz5Q0QxgiJpu4n4pX83vI/e3IIrD8KLrADTpof3zU2D0Be4Af191tKeFkIyMGZ9thv6noFJJ5HbeikpLGqS2UcXDLrcvfU/kp38N+Q7B3LbktA1k5/A35uP9FFUtcwB2YuLSL+h32VvDFK6ZDzTbq0YSsozGTy67kHsdEVh2IFoyPN2bNcdTET35sPMclqMaw8SMztGtr8tR7rHvYBy7EciOyjJSxyLxccsTzvF6b/5k4dH4ZDzdl7gEgEkHmHXzDs4KsxCMNNgtjx1RnwoqgauY77PIeZbYvhcfQB7b+ixrmF2q9KElKKaPMyRcZtMHDV0Eg3C6nBt0wpfUmIB8Ra5Z6qZZxU98uybHHncuOLPhasyPt1W5fLfVYjBqT+MAtxVx5QFnnXNF4bxsDrHpUkqGrHptNIqEyzFQp2z3CqHvUkMy44sC9ITKFr0xxXACc6SFzri4486c66QXE4IjnQr7h/FCwhpOiok9hslYyPWKSoDxdSOcsZgGL7AlauKXMLrkxGqOynRQRFTSbKKMKGd6L+nW2dIUMoRJCilAWZGtgLo1YNxBroHQgWytN+t97++6GLLomfCCyPxhu34x1ZzPtv6XVIJvoSTS7CMNcHMB3FvojW0w+ysyagySnSx1Mjr/UlU2AYo2KXI7b7voVrjE1zHtaBa/iAfz7/XN80JLTC3tD8DjDI84+JxsLjY+370Vn43h+VjczzqT35oGiNmtvyDulhtbbRFUErWgvOpKbHKkknRLIrbb2GMEh+Igdm/qUygcHteD1IP7KIgcTqf/SAw91nP6XK0N1KP5szpWpE1KfJl/CS325LH4pFle62wd0WugcLE9yVj6yXO5x2u7r/f+qzZ37Ymr0690iM0jZKedr9W5Yz7tfp+a8//AMqYXhrTa9wt9i7gykcL2Mr2MHLRpzu9tLe6xFTREuDmuIcOa0+mX9NGX1LvIwqTgh7hdjwfUKsreE6qPXw8wHMK+wzH6iGweGvb20K1lHxhTPaA85TfUFXIaPHp8Mnbq6NwHou0MgadV9EVLqWSDdhFtNl4FjdK01cjY/hzcup3RujqsvOGIPEkzcloMZdZP4Yw3w4x1TOIY7arDz5ZLNvDjjooKpyhgfqlUO0UMDtVqMoaXJzCogV0OXHBbXp+ZCNepQ9ccSXSUeZJccYNOBTF1EYeuhNBXboBJ4ZS03C1+C4pcAErFAoqjqS0oUHs9HMoKeFn8Or8wCu2O0WbP8F/TqrHueoXyJPch5HqCRoss8FgzvvyC1jowBb5qq4Vg8l+uquKl4aLnb8+wW7DHjGzDmlylR5rxNg74XFwYTEDdrhc5R+F/S21z25ruFcZeDNDnBMWrJHHkx1rH2IHtdbv/MI3NflOrDZ4O7SRcX9l5zxUymfmcXCGQ6/7X93N3BPUfVLKMbRRTk40z1SWK4DmWLXWLSDuDz337IGGfXYlrDsbj29lguB+MW0kfhSzMfHfRtpAWt5ZSW7j8l6Nh2KU9R5oZGuJ+6SA4+x3UcmDdoeGa1TJ6jGgRZg33K7REublAsL6nr6FJzADfwmj1Fve9kpnPdoCAOjQb/klbbdydh4qqigbGK6w8OM6nc8vmq2joS7U/COvPv2COnZDA0vlc1rerza5vtbmVS4ljTJRkzOiiO9h/Fkb/Kf9Nv8ANr2XeNyfKXQeaiuMTH8ZY2+aoDIgXRxjKzKC4vd994A3voPbuo8Lo5nuykZTzDuXtyWhixSig1ZCO7nveSfUNICkbxVSO0dC0Dq0yt+oK0eSlSI+JN3JP/AL/wBPFw/1Wj0aT/VV9XwUXG/jD2ZY/wDmrmSmgnF6WpMb+TJTnYe2cWc31OZZqtxKeneYqlrmHdut2uHVjxo4fsruWT4YfHh+dfyTz8Nzxx/wp3E/hItfsDyKi4awZ2e7wb31vvfupcPxOx3OvVaijqW2zafvqpznKqKxxRTtFpAywsqbiVvlV5HIDsqfiE+VRhfJByfSzG1A0Q8O6PnZog4m6reYAhdBTnBRFyASVqdmULXrrSiAnDkkgElxxhrpXTUrpg2PuugpiV0DiW6Reoi5cuuo6y/wGW7gFumRiywXDLbyBbknusfqPqNnp17QWocQUKZCdADc6BHmAuIAFydgNytDhWDtgGd4BkPuG+nfukirKyYZggdFGAQAbc+XyUGM1rWNLnu1G3XXkAqrGsUdGCRt68+Vlizjsk9Rq4ZIwXEHXMRy9L/krxcpa+CE1GG/kbjmNOhdIIi4STAGTY5Gi5aAOTrEnsCstJfMc97nW5Op9SfdS1Va9xcSR5ibkc7m9r9Pz9gomzX0dqOulx3H6LSlSMsm27ZLV0+Qh2j43HQ6juWOF7td+e4ulQzSN1ic5jhro6wcRzAv8Xoute6I2OV7T93Ute0a6/u4IOybU+EDdgJa7UNJ1Z1aSPi9dERTbcO8X1MhDHVErX6D/wCux5ahzCb+hH67mmgnkF5Kye3MNETPqGX+RXhcU5aQRoQSb8+WhPt9V7dguJh9K2f/APPOehcPKB7ut9Ur1sZb0iq4kkiidlYCZObnlz3t56veSc3bZvS6oKejdKczsx12v+m/qVYfZXPku7Uk3ceevUfVarDsLAIGguRc2XnZMzk9HpY8ShHZTUXDTHnNYkaWb001urT/AKbh2LACORFrLWwYeIiCDcHe/XqpMWhGUOG4I+SfwS4tt7RL9QuSS6MBXcJgeZmnK4G3t19UDLC2SP7PVeeI/C/Z8TraPaTt/ex0Xpz4RlBtoQLjsf0WWxvDLOuLWOmrcwPawB3XSU8TTTDGUcq4tHl9ZgdVTPdG5hkaNWSM1DmcjYaj9QURheKFunJb1rPEhLQbuhsWm1jkOjm+2/ssLjuCuge6dmrHG7h+AuNyf5SfldU5qb/cWKcP9muwysa8fFYoqpja9pB1/fIrzttaRYtuAfoVfU2I+X4if1SNNFdMbX0xZ3B2PX+6qQdVpKTzhzXi7XfTuFRV1G6J9jtyPIhaMc70zHlx8dro5K5QFEFuijc1UIkYUrCownNRAEh6SjCSATEpLi7dOcJK64kFxx1IJIrDcOlqHiOJhc7n0aOrjyC44uOFI7vut3Q4e+U2btzcdh/fsu8K8GspwDK7xH8wNGDt1d7/ACWtfKGizRboBsFjnHlKzZjfGNEdFSxwizRrzcdz79OyhxBwtd2yimmddVXEkrzC4N6En0sh+Bkt2YziPEnSuc5ukTA4NP4nga262B+qzuBW/i35s/ryKvMfbkihaNg1wPqchP1uqPDMrXHpz7DZaIfSZ8juQLTUsZAzShjidrXAHVxuuV2HyRWzAFrvhe3Vjv5Xf0OqkxWjLHXt5XHQ8kKJXZctzlNrC5te/IKpDaOMcdrn9ORT45iAQ3bmCAb97FMDRcAm34ip5I8tjYEW56XvtoDqNN+5XBBSvVOCXE4fl6SNbvbTKZPzcF5wyjEjwWjKwjM48owPi/t6heh/4bTiWGpbbQTMeG/7HM8MD5NCnm+h/sPi+tFrh0Nn68+RIv7HnbZamOPz2BttY9L7LPxNDX8hr0I+h9ButTRt8RoINj90npza5eZCPJ0elldKywbOWi0g/wCQ1Huu1jrxGxvtY9lE2oLNHtNvmPYpgliPwuAvu37p9uS387VX/PZg47uv+BbX/wAEH/aqnH2AxG+mo135b2R0WjAzo75t3VTxLVHyxtuTfWxHy/NJmlePf4Hwx/qa/JW4U68gGa4N2crFrm/2+qEcA4FpAIIII5EHQoiiflfncAMuZxNwSA0G+o0tr++WFwTioF1n6XP5qGODlDXwXyTUZ7+QGqpDBJJC4HLfMw9Wm9jf6ISmqCwrYcShr2MlZyDgfQgEfUfVYnwjdXg+S2I/b0a3CqwnkbFWdXA2Rlj/AHHcLN4ZUZRuFaMrlNqnopprYHLTlpsfY9R1Q8rVeSBszSDcX5jQi/MH5LI1801O/wAOQhwOrH2+IdDbmtOOXIxZYcd/ASuucACTsN1VuxJ3QfVC1Fa9wLSdDvYKvFkeSCnY6L6MJHIpKm8EdSkmoFj5qcjcEeoIQ5K99EYO4B9U3wWjkPkFDzfg0LC/ueExQPd8LXO/laT+Ss6Phmsl+GB9urgGD/usvZmlg6LrpmnYoPMMsJ53hX+HjyQaiUNHNkfmce2c6D5FbrDKKKBmSJgYwdNyeridSe5RYjG6DqIy46GylKbfZWMEuixMwsmxHMdEBFC7nqjYxlQQWFvpWkKnx6iJieG82uHzBH9VewyXTnxhyehbo8bxhpDBf7pvfsRY/mD7LNSktdf59wd16NjFI1lSGSN/hOda5vYtdpa/a/0WExfDnU8jo3XIBIa48wDse+ypieiWVbCIaryAuAew6a/+LuhQ0lFEc3huAvazJDYt15O+8gI5XMN2mx9iPcHQqX7aOcbC7XzajXl5b2+irRGyduCzuufDJDRc2LTp211UBpXAkPOX1NzptoFHFWvabg/1XKirc/e3ewDb9zZEATPUtDfCjHlNsx5uI2ue3TZbH/Dap8BwzD+HKXB56BwaGn0BaD7lZHAsLdPILA5G/E7l6DuV6DTUgaAANFDNlUdGjDi5bNZi9A4Enl11Nj++6HosSfEb2u0nzdB3BP7CIwTFGuaIZjYjSN5Oh6NcevQruJ4SWm7QBb2t37rFODj7o9GyE0/bLsuafHYiNXeztvYpS18G5Dfp+iyD43NtfXe4PP6a8ymCI9NPugAloOu9zp05e679ROqdHfpoXas1P+dQNNmgns3X81RYo4OeXE3zE5RtrYaW9L/vVDRM/E7b7t+ZO7UXP4VOzx6gljPusPxyH8LWdD+7BLc8robjDFsqeKpjBRSEf6kw8NulrRn43AdwT8wvJHOXpVXNU15c57WRsOjQXfC0bDZAU/DdJE/NJJ4rgb5ALR+43P5LfBwxxqzDOGTJK6OYFA/7M0yG4drbS+X7o39z7KuxiLK7RbSKoa8ZQbDkOXpZUGMYf5ja1ioqXuNDh7aRnY5yjIZS42ChfQ2KPoXsZ/fdUdfBNX8lhh0xZupMejimgcCQHN8zT0IF9PVB1dW22llnK58rr3Jt0Sxi27GnJJV2V4eu51CF0FbTzqH+VJREpLjj1o48DsUO/GRr5lh/tJ6ppnPVYvEeh5EbcYmCd1PDigaN1hWTkc077S480PGN5EbaTHidkocbN7WWNjqnBTsrCdyu4BU0eh0WKtO5VgyqaRuvN4a0ehRMWJuabg+yFNHaZ6CyoAR8UoOq85dijiLtcjcP4hI+I6rk2g8LNdilBHO0tcAR+7LIcRYOTcPZ4jSADbRxsND/ADd0a3H+/onf5sHc1zkcsf3PKMSovDcQ0kjo4EPHryPsfZAEL1PEYIZfiAus9NgsQOh0Vo5vuRl6bemY4MU8VKTyWpFBEN0JK0HRug5n9E3ksXwpdss+EJXhpYbZG/CbAancd1qQ4LL4TJsBtstUIrgLHm+qzRi6K/FakBh9FX4Fx9UwHw5AJ4hs19y5o/2vGvzRGNwnKVlcFqWMmtJsTvyHqrenqmQ9Tej0iLjTDpB5xNF2AzgemhITH8VYXfSaocejYy365bIuLhikmjDyBcjdqx83DNpHeE4GxsM2xVZYcfdE45p3VlvXcdsjB+y03mG0kxzEdw0afULF1WKyTy+LPIXu6nZoPJo2AXMWbPGSDHbvyVGXO6IxhqgyyK7WzXMxhmgudNDronnE4AN9VlBD5bkobxSh4UH9SzRVOLG/lNlAcakO5uqgNda6MgoS5me/tZFwiuwLLKT0OlxF7uaiFSeqjFO7ou/ZTzNvZHR1TfwER1XUo0VcOWxvdVD6fTQ/NB+L2XcUzm5Q7RNUuGY22UOZcT/s7vwlU6IcW+hl0l0xnokus7iw0ThPbMgwU4OXcUdzYaJk4zDqg/EXC9dwR3kkFiqCkZVBVzTqj4IL2SuKGjNhTJFO1/dXdHh8b2AOaD32PzQtbgZbrG7MOh0d89is3kjdGzxySsAa8pzX3Q5aQbG4PQpZk9Cpk7tOZThUkbFCl912I6+UEntqUaOvYUal52B/JciEkjwxouT+QGpVvheDPltnd4d+Vru/PRarB8Jhpbu1c4ixc7e3QcgEqpnTlRhX0D72sV2XD3sGoK9CpzE6QmwTsUgbKLNauSdWI57ow+EQ2cFrQ4WsqoUfhu1RsT1jyytmvHGkQ18d2lYHEYA2TbS69GkaCFk8fo9yAnwTpi5sfKJyKSYxWhle0W1AOipqfE6imduSL6h2v1RmB4hkeGu2W6HD8NQy9hqF6OmeZuLKfCOIIKgZZAAe/wCqbjnCzHDNF5T82lQV/ArmOvG4goqkZVU7fMbjodihtdBtMwVfQTMNniw68imU1EXctFs8ZrY5G6gdwqhk7cu1gE0dglrSBatrQwMA1KvKPDskIvzVdg9IZpb/AHQtNj5yRLJ6jJclFG30mPj7pFRT0TeymmwoEbKip6w33VxS4geqSSkj2sbxzWikxHDizZUphAP9Ftqsh4WXxGnsVbFO9Mwes9Oo+5IHZLZOdNdC3XbqtGJZH0JxSSukiTIgU8KFODk5CiQpq5mXbogHtKtKV1rKtgZcq3EellObHgjUYbK0tHmRbyOqyVPE/kSrMQSZdysksO+zas1LolrYWu3sh4sNYTq4/MKrqnvB3UBqHjmnWOSWmL5Yv4NhFh9O0aMB9ST+akYGjRoA9LBYr7fJ+JIV8nVI8Mn2x1miukem4S3mrepLC3VeSQ43M3Zye7iKe1syVYZro55YPs1lPiBbPlHw3WyimGULxRuIvBvfVWsPFs7RZPLHP4FU8Z6NiEWbVAtjssU7jCYqI8VSqXgmUWaCPQAxV+I0mYLIjiyVcdxXIeS5YJo7zwI8Vw4g3CnwXieam8pu5v1Qc+POfuFXy1V1qhyS2ZsnCXR6LBx3E+2bT1RNbxPSyMsXBeV5l0C6rbIcEXeLV0RPk1QlJTOlNuShp4+oV1RV7GclOc5VorjhC9mrwLDAxoUXFjLRFVzOKmtGyrMc4nErMoCxxxzcraNjyQS7M/A9WMEyp6d+qLa9a5IbBlpGjgIIQtfTByGpqpWLZAQoU4s9TlHJGjLVFNYochX9bFdVM8NlpjKzxs/p3CWgRcTi1JOZiN0SZZJJMiR0MKmjguuJINhSLGnjARkDbrqSkyiLekjCNdKAEklP5HM3iMoJQh2SSViZA4Jq6kuCK64UklwBiSSSJwlxJJcBnLriSSIBALoCSSBx2yLo4rlJJBhReQ0osoJ4wEkkg9FfPGgJmJJJ0IwYOsUbBJdJJGSHwydhDXIqGpXUlJo9CE2uhT1CDfKCkkjFC5sjuiIxhJJJMS4o/9k=" alt="Coffee">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="features">
+
+    <div class="container">
+
+      <h2 class="section-title">Why our beans?</h2>
+
+      <p class="section-subtitle">
+        These things we care about more than anything else.
+      </p>
+
+      <div class="feature-grid">
+
+        <div class="feature-card">
+
+          <div class="feature-number">1</div>
+
+          <h3>Fresh Roast</h3>
+
+          <p>
+            Every bag is roasted fresh and never sits on shelves for long.
+          </p>
+
+        </div>
+
+        <div class="feature-card">
+
+          <div class="feature-number">2</div>
+
+          <h3>Direct Trade</h3>
+
+          <p>
+            We buy directly from farmers and build meaningful relationships.
+          </p>
+
+        </div>
+
+        <div class="feature-card">
+
+          <div class="feature-number">3</div>
+
+          <h3>Made With Care</h3>
+
+          <p>
+            Our roasting team carefully crafts every batch for balance and flavor.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact">
+
+    <div class="container contact-wrapper">
+
+      <div class="contact-info">
+
+        <h2>Get in touch</h2>
+
+        <p>
+          Questions about wholesale orders, a future roast,
+          or just want to say hi? Drop us a line and we’ll get back to you shortly.
+        </p>
+
+        <div class="contact-details">
+
+          <p><strong>Email</strong><br>hello@brewco.com</p>
+
+          <p><strong>Phone</strong><br>(555) 123-4567</p>
+
+          <p><strong>Visit</strong><br>24 Maple Street, Brooklyn</p>
+
+        </div>
+
+      </div>
+
+      <form>
+
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Jane Doe">
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="jane@example.com">
+        </div>
+
+        <div class="form-group">
+          <label>What’s this about?</label>
+          <input type="text" placeholder="General question">
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us a bit more..."></textarea>
+        </div>
+
+        <button class="submit-btn">Send Message</button>
+        
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div class="footer-logo">Brew & Co.</div>
+
+          <p class="footer-text">
+            A small roastery and café. Open every day from dawn to dusk.
+          </p>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h4>Shop</h4>
+
+          <ul>
+            <li><a href="#">Whole Bean</a></li>
+            <li><a href="#">Ground Coffee</a></li>
+            <li><a href="#">Gift Cards</a></li>
+          </ul>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h4>Café</h4>
+
+          <ul>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Hours</a></li>
+          </ul>
+
+        </div>
+
+        <div class="footer-column">
+
+          <h4>Help</h4>
+
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>© 2025 Brew & Co. All rights reserved.</p>
+
+        <div class="socials">
+          <div>IG</div>
+          <div>TW</div>
+          <div>FB</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
